@@ -11,39 +11,66 @@
 // PARTE ESCRITA 
 
 /* 1) function imprimirInformacoes(nome, idade, endereco, trabalho) {
-    const frase = (`Eu sou ${nome}, tenho ${idade} anos, moro em ${endereco} e sou ${trabalho}`) 
-    console.log(frase)
+const frase = (`Eu sou ${nome}, tenho ${idade} anos, moro em ${endereco} e sou ${trabalho}`) 
+return frase
 }
 imprimirInformacoes("Carlos Daniel", 21, "Itumbiara", "estudante") */
 
  
-/* 2) 
-    a)function soma(primeiroNumero,segundoNumero) {
+ 
+    /* 2 a) function soma(primeiroNumero,segundoNumero) {
     const somaEntradas = primeiroNumero+segundoNumero 
-    console.log(somaEntradas)
+    return somaEntradas
 }
-soma(5,7) */ 
+soma(5,7)  
 
     
 /*  b) function boolean(primeiroNumero, segundoNumero) {
 const maiorOuIgual = primeiroNumero >= segundoNumero
-console.log(maiorOuIgual)
+return maiorOuIgual
 }
 boolean(3,4) */
 
- /* c) function numeroParOuNao(numero) {
+/* c) function numeroParOuNao(numero) {
     const paridadeResultado = numero % 2 === 0
-    console.log(paridadeResultado)
+    return paridadeResultado
  }
    numeroParOuNao(4) */
 
+  
   /* d) function mensagemString(mensagem) {
-       mensagem = "Você recebeu uma mensagem!".toUpperCase()
-       return mensagem
+       return `${mensagem.length}, ${mensagem.toUpperCase()}`
    }
-   mensagemString() */
+   console.log(mensagemString("Oláa pessoal!")) */
+
+/* function soma (primeiroNumero, segundoNumero) {
+return primeiroNumero + segundoNumero
+}
+
+function subtracao (primeiroNumero, segundoNumero) {
+return primeiroNumero - segundoNumero
+}
+
+function multiplicacao (primeiroNumero,segundoNumero) {
+return primeiroNumero*segundoNumero
+}
+
+function divisao (primeiroNumero, segundoNumero) {
+return primeiroNumero/segundoNumero
+}
+const primeiroNumero = Number(prompt("Digite o nº1: "))
+const segundoNumero = Number(prompt("Digite o nº2: "))
+
+console.log ("Soma é igual a: ", soma(primeiroNumero, segundoNumero))
+console.log ("Diferença é igual a: ", subtracao(primeiroNumero, segundoNumero))
+console.log ("Multiplicação é igual a: ", multiplicacao(primeiroNumero, segundoNumero))
+console.log ("Divisão é igual a: ", divisao(primeiroNumero, segundoNumero)) */
 
 
+
+
+
+ 
    
    
    
