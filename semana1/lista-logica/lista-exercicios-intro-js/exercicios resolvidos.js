@@ -125,8 +125,8 @@ function checaValidadeInscricaoLabenu(maiorIdade, formacao, horario) {
     formacao = prompt("Você possui ensino médio completo? sim/não")
     horario = prompt("Você possui disponibilidade exclusiva durante os horários do curso? sim/não")
 
-    inscricaoValida = (maiorIdade === sim && formacao === sim && horario===sim)
-    return maiorIdade || formacao || horario
+    const inscricaoValida = (maiorIdade === "sim" && formacao === "sim" && horario==="sim")
+    return inscricaoValida
 }
-console.log(checaValidadeInscricaoLabenu())
+checaValidadeInscricaoLabenu()
 
