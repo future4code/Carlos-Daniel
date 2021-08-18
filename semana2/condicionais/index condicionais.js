@@ -80,7 +80,8 @@ switch (turnoUsuario) {
 const assistirFilme = (cond1, cond2) => {
     const generoFantasia = prompt("Qual gênero você irá assistir?")
     const abaixoQuinzeReais = Number(prompt("Qual é o preço do ingresso?"))
-
+    
+    
     if (generoFantasia === "fantasia" && abaixoQuinzeReais <15) {
         console.log("Bom filme!")
     } else {
@@ -90,3 +91,12 @@ const assistirFilme = (cond1, cond2) => {
 }
 
 assistirFilme()
+
+
+
+
+
+
+
+
+
