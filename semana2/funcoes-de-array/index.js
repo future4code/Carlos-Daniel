@@ -58,9 +58,8 @@ const produtos = [
     { nome: "Sabão em Pó Ypê", categoria: "Limpeza", preco: 10.80 }
  ]
 
-const descontoYpe = produtos.filter(produtos => produtos.nome.includes("Ypê"))
-const fraseProduto = descontoYpe.map(produto => console.log(`Compre ${produto.nome} 
-por ${produto.preco}`))
+ const descontoProdutos = produtos.filter(produtos => produtos.preco -= 5/100)
+ console.log(descontoProdutos)
  
 
 //A
@@ -68,7 +67,7 @@ const apenasNomeProdutos = produtos.map(produtos => produtos.nome)
 console.log(apenasNomeProdutos)
 
 //B
-const descontoProdutos = produtos.filter(produtos => produtos.preco -= 0.05)
+const descontoProdutos = produtos.filter(produtos => produtos.preco -= 5/100)
 console.log(descontoProdutos)
 
 //C
