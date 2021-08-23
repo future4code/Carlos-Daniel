@@ -24,13 +24,17 @@ retornaTamanhoArray([5,4,2,8,3])
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  
+    return array.reverse()
 }
+
+retornaArrayInvertido([8,23,16,10])
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
   
 }
+
+
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
