@@ -31,9 +31,10 @@ retornaArrayInvertido([8,23,16,10])
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
+    return array.sort()
 }
 
+retornaArrayOrdenado([3, 2, 1, 4, 7])
 
 
 // EXERCÍCIO 04
@@ -292,4 +293,12 @@ Tenho uma ${prof.pet.especie} chamada ${prof.pet.snacksFavoritos[1]}`)
 console.log(frase)
 
 prof.contaPiada()
+
+
+
+
+
+
+
+
 
