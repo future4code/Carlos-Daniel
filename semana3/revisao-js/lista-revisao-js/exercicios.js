@@ -44,18 +44,28 @@ function retornaNumerosPares(array) {
 
 retornaNumerosPares([1, 2, 3, 4, 5, 6])
 
-
-
-
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+
 }
+
+
+
+
+
+
+
+
+
+
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
-}
+    const maior = Math.max(...array)
+    return maior 
+   }
+   
+retornaMaiorNumero([1, 5, 3, 7, 5, 2])
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
