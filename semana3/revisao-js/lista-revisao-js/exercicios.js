@@ -36,11 +36,16 @@ function retornaArrayOrdenado(array) {
 
 retornaArrayOrdenado([3, 2, 1, 4, 7])
 
-
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    const numerosPares = array.filter(numero => numero % 2 === 0)
+    return numerosPares
 }
+
+retornaNumerosPares([1, 2, 3, 4, 5, 6])
+
+
+
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
