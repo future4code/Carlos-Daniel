@@ -42,10 +42,11 @@ retornaNumerosParesElevadosADois([1, 2, 3, 4, 5, 6])
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-    return maiorNumero = (Math.max([array]))
+let array = [1, 5, 3, 7, 5, 2]
+    return Math.max([array])
 }
 
-retornaMaiorNumero([1, 5, 3, 7, 5, 2])
+retornaMaiorNumero()
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
