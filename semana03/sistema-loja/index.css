@@ -1,0 +1,61 @@
+#texto-boasVindas{
+    color:rgb(14, 35, 224);
+    display: inline;
+    background-color: rgb(168, 141, 212);
+    margin-bottom: 20px;
+
+}
+
+.link-funcionarios {
+    color: rgb(101, 154, 214)
+}
+
+.Pagina-Inicial {
+    display: inline;
+    border: 5px;
+    background-color: rgb(125, 125, 240);
+}
+
+#link-redes {
+    color:rgb(160, 141, 231);
+    background-color: rgb(91, 43, 204);
+    display: inline;
+    margin-bottom: 50px;
+}
+
+#carlao-store {
+    display: inline;
+    border: 8px;
+    background-color: rgb(158, 117, 255);
+
+}
+
+.quem-somos {
+    display:rgb(3, 41, 206);
+    border: 20px;
+    background-color:  rgb(158, 117, 255);
+    display: inline;
+    margin-bottom: 15px;
+}
+
+.add-produto {
+    display: inline;
+    border: 5px;
+    background-color: rgb(125, 125, 240);
+    
+}
+
+.info-produtos {
+    padding: 10px 5px 8px 20px;        
+}
+
+.foto{
+    display: inline;
+    border: 10px;
+    margin-top: 20px;
+    background-color:rgb(115, 160, 212)
+}
+
+.separar-margens {
+    margin-bottom: 50px;
+}
