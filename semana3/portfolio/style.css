@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap');
+
+* {
+    font-family: 'Kaisei Tokumin', serif;
+}
+.cabecalho{
+    background-color: rgb(106, 150, 216);
+    text-align: center;
+}
+
+.abas{
+    background-color:rgb(160, 199, 238);
+    border: 2px solid;
+    padding: 3px;
+    margin: 5px;
+    
+
+}
+
+.imagem{
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+.redes-sociais{
+    background-color: rgb(139, 169, 214);
+}
+
+.formulario {
+    display: inline;
+    background-color: rgb(139, 169, 214);
+}
+
+.botao:active {
+    background-color: darkblue;
+}
+
+.botaoadd {
+    margin-top: 15px;
+}
+
+.footer {
+    background-color: rgb(106, 150, 216);
+}
+
+button {
+    border-radius: 10px;
+}
+
+.formulario-ctt{
+    background-color: rgb(137, 187, 228);
+    border: 3px solid;
+    display: inline;
+}
