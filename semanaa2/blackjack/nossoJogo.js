@@ -28,8 +28,8 @@ const somaCartasComputador = somarCartas(primeiraCartaComputador, segundaCartaCo
 console.log(`Usúario - cartas: ${primeiraCartaUsuario.texto} - ${segundaCartaUsuario.texto} - Pontuação ${somaCartasUsuario}`)
 console.log(`Computador - cartas: ${primeiraCartaComputador.texto} - ${segundaCartaComputador.texto} - Pontuação ${somaCartasComputador}`)
 
-if(somaCartasUsuario === somaCartasComputador){
-   console.log("Empate!")
+if(somaCartasComputador>somaCartasUsuario){
+   console.log("O computador ganhou")
 }
 else if(somaCartasUsuario>somaCartasComputador){
    console.log("O Usuário ganhou")
@@ -38,7 +38,7 @@ else if(somaCartasUsuario>somaCartasComputador){
 }
       
 }
- else {
+else {
    "O jogo acabou"
 }
 
