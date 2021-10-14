@@ -9,7 +9,7 @@ export const ListTripsPage = () => {
   };
 
   const irParaFormulario = () => {
-    history.push("/applicationForm");
+    history.push("/trips/application");
   };
 
   return (
