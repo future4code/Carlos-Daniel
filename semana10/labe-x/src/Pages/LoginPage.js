@@ -14,9 +14,6 @@ export const LoginPage = () => {
   return (
     <div>
       <h1>Login Page</h1>
-      <input placeholder={"E-mail"} />
-      <br />
-      <input placeholder={"Senha"} />
       <button onClick={irParaInicioAdm}>Entrar</button>
       <button onClick={voltarPaginaInicialAdm}>Voltar</button>
     </div>
