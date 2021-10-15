@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
+import { ChakraProvider, Text, Box, Center } from "@chakra-ui/react";
 
 export const HomePage = () => {
   const history = useHistory();
@@ -13,10 +14,37 @@ export const HomePage = () => {
   };
 
   return (
-    <div>
-      <h1>LabeX</h1>
-      <button onClick={irParaViagens}>Ver Viagens</button>
-      <button onClick={irParaLogin}>Área de Admin</button>
-    </div>
+    <ChakraProvider>
+      <Center bg="DarkBlue" h="75px" color="white">
+        <Text textAlign="center" fontSize="3xl">
+          Labe-X
+        </Text>
+      </Center>
+      <Box
+        onClick={irParaViagens}
+        as="button"
+        borderRadius="md"
+        bg="#4682B4"
+        color="white"
+        px={4}
+        h={8}
+        margin={15}
+      >
+        Ver Viagens
+      </Box>
+
+      <Box
+        onClick={irParaLogin}
+        as="button"
+        auto
+        borderRadius="md"
+        bg="#4682B4"
+        color="white"
+        px={4}
+        h={8}
+      >
+        Área de Admin
+      </Box>
+    </ChakraProvider>
   );
 };
