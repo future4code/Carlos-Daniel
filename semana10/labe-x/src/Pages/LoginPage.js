@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios";
-import { ChakraProvider, Box, Input, Center, Text } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  Box,
+  Input,
+  Center,
+  Text,
+  InputGroup,
+} from "@chakra-ui/react";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
+  const [mostrar, setMostrar] = React.useState(false);
 
   const history = useHistory();
 
@@ -21,7 +29,7 @@ export const LoginPage = () => {
     history.push("/");
   };
 
-  const autenticaUsuario = () => {
+  const entrar = () => {
     const URL =
       "https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos-daniel-maryam/login";
     const header = "Content-Type: application/json";
@@ -34,6 +42,7 @@ export const LoginPage = () => {
       .post(URL, body, header)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log("Deu ruim", err.response);
@@ -60,17 +69,18 @@ export const LoginPage = () => {
         onChange={onChangeEmail}
       />
       <br />
-      <Input
-        placeholder="medium size"
-        size="md"
-        placeholder="Senha"
-        type="senha"
-        margin={3}
-        width={300}
-        value={senha}
-        onChange={onChangeSenha}
-      />
-      <br />
+
+      <InputGroup size="md">
+        <Input
+          placeholder="Senha"
+          valu={senha}
+          onChange={onChangeSenha}
+          width={300}
+          margin={3}
+          pr="4.5rem"
+          type={mostrar ? "text" : "password"}
+        />
+      </InputGroup>
 
       <Box
         onClick={voltarInicio}
@@ -86,7 +96,7 @@ export const LoginPage = () => {
       </Box>
 
       <Box
-        onClick={autenticaUsuario}
+        onClick={entrar}
         as="button"
         borderRadius="md"
         bg="#4682B4"

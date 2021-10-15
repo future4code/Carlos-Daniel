@@ -28,6 +28,7 @@ export const TripDetailsPage = () => {
   const voltarInicio = () => {
     history.push("/");
   };
+
   return (
     <ChakraProvider>
       <Text textAlign="center" fontSize="3xl">
