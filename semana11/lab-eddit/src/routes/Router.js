@@ -1,38 +1,34 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import PostList from "../pages/PostList/PostList";
 import PostPage from "../pages/PostPage/PostPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import Header from "../components/Header/Header";
 
-const Router = () => {
+const Router = ({ setRightButtonText }) => {
   return (
-    <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route exact path={"/login"}>
-          <LoginPage />
-        </Route>
+    <Switch>
+      <Route exact path={"/login"}>
+        <LoginPage setRightButtonText={setRightButtonText} />
+      </Route>
 
-        <Route exact path={"/cadastro"}>
-          <SignUpPage />
-        </Route>
+      <Route exact path={"/cadastro"}>
+        <SignUpPage setRightButtonText={setRightButtonText} />
+      </Route>
 
-        <Route exact path={"/"}>
-          <PostList />
-        </Route>
+      <Route exact path={"/"}>
+        <PostList />
+      </Route>
 
-        <Route exact path={"/pagina-do-post"}>
-          <PostPage />
-        </Route>
+      <Route exact path={"/pagina-do-post"}>
+        <PostPage />
+      </Route>
 
-        <Route>
-          <ErrorPage />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+      <Route>
+        <ErrorPage />
+      </Route>
+    </Switch>
   );
 };
 

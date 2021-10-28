@@ -18,17 +18,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = () => {
+const Header = ({ rightButtonText, setRightButtonText }) => {
+  const token = localStorage.getItem("token");
   const history = useHistory();
-  const classes = useStyles();
+
+  const logout = () => {
+    localStorage.removeItem("token");
+  };
+
+  const rightButtonAction = () => {
+    if (token) {
+      logout();
+      setRightButtonText("Login");
+      goToLogin(history);
+    } else {
+      goToLogin(history);
+    }
+  };
+
   return (
     <AppBar position="static">
       <StyledToolbar>
         <Button onClick={() => goToPostList(history)} color="inherit">
           LabEddit
         </Button>
-        <Button onClick={() => goToLogin(history)} color="inherit">
-          Login
+        <Button onClick={rightButtonAction} color="inherit">
+          {rightButtonText}
         </Button>
       </StyledToolbar>
     </AppBar>

@@ -6,13 +6,15 @@ import LoginForm from "./LoginForm";
 import { goToSignUpPage } from "../../routes/coordinator";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
-const LoginPage = () => {
+const LoginPage = ({ setRightButtonText }) => {
   useUnprotectedPage();
   const history = useHistory();
   return (
     <ScreenContainer>
       <h1>LabEddit</h1>
-      <LoginForm />
+      <LoginForm
+        setRightButtonText={setRightButtonText}
+      />
 
       <SignUpButtonContainer>
         <Button
