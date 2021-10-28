@@ -1,6 +1,6 @@
 import React from "react";
 
-const Feed = () => {
+const PostList = () => {
   return (
     <div>
       <h1>Post List</h1>
@@ -8,4 +8,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default PostList;
