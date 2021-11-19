@@ -59,3 +59,35 @@ app.get("/countries/search", (req, res) => {
 });
 
 //4) EDITAR PAÍS
+// app.post("/countries/:id", (req, res) => {});
+
+// 5) DELETAR PAÍS
+app.delete("/countries/:id", async (req, res) => {
+  try {
+    const token = req.headers.authorization;
+
+    if (!token) {
+      res.statusCode = 401;
+      throw new Error();
+    }
+
+    const index = countries.findIndex((country) => {
+      return country.id === Number(req.params.id);
+    });
+
+    if (index === -1) {
+      res.statusCode = 404;
+      throw new Error();
+    }
+
+    countries.splice(index, 1);
+
+    res.status(204).end();
+  } catch (error: any) {
+    if (res.statusCode === 200) {
+      res.status(500).end();
+    } else {
+      res.end();
+    }
+  }
+});
