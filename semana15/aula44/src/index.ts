@@ -56,13 +56,6 @@ let users: user[] = [
     type: userType.ADMIN,
     age: 17,
   },
-  {
-    id: 6,
-    name: "Fred",
-    email: "fred@email.com",
-    type: userType.ADMIN,
-    age: 60,
-  },
 ];
 
 //Exercício01 - Usária o método GET através da entidade "/users"
@@ -117,6 +110,63 @@ app.post("/users", (req, res) => {
   }
 });
 
+//A) O put atualiza os recursos ou cria(caso não exista)
+//B) Prefiro o Post, pq é mais apropriado para a criação e o post ficaria melhor
+// para editar
+
+//Exercício05
+app.put("/users", (req, res) => {
+  let errorCode: number = 400;
+  try {
+    const { id, name, email, type, age } = req.body;
+
+    if (!id || !name || !email || !type || !age) {
+      errorCode = 422;
+      throw new Error("Please check the fields!");
+    }
+
+    const newUser: user = {
+      id,
+      name,
+      email,
+      type,
+      age,
+    };
+
+    users.push(newUser);
+    res.status(201).send({ message: "User added successfully" });
+  } catch (error: any) {
+    res.status(errorCode).send({ message: error.message });
+  }
+});
+
+//Exercício06
+app.patch("/users", (req, res) => {
+  let errorCode: number = 400;
+  try {
+    const { id, name, email, type, age } = req.body;
+
+    if (!id || !name || !email || !type || !age) {
+      errorCode = 422;
+      throw new Error("Please check the fields!");
+    }
+
+    const newUser: user = {
+      id,
+      name,
+      email,
+      type,
+      age,
+    };
+
+    users.push(newUser);
+    res.status(201).send({ message: "User added successfully" });
+  } catch (error: any) {
+    res.status(errorCode).send({ message: error.message });
+  }
+});
+
+//////////////////////////////////////
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
     const address = server.address() as AddressInfo;
