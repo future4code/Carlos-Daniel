@@ -166,6 +166,28 @@ app.patch("/users", (req, res) => {
   }
 });
 
+//Exercício07
+app.delete("/users/:id", (req: Request, res: Response) => {
+  try {
+    const id = Number(req.params.id);
+
+    if (isNaN(id)) {
+      throw new Error("Invalid id");
+    }
+
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].id === id) {
+        users.splice(i, 1);
+        return res.status(200).end();
+      }
+    }
+
+    res.status(204).send("User not found");
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
+});
+
 //////////////////////////////////////
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
