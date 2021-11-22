@@ -6,7 +6,7 @@ const age = Number(process.argv[3]);
 const params = process.argv.length - 2;
 
 if (params < 2) {
-  return console.log(`Was expecting 2 parameters, got ${params}`.red);
+  console.log(`Esperava 2 parâmetros só recebi ${params}`.red);
 }
 
 console.log(`Olá, ${username}! Você tem ${age} anos.`.blue);
