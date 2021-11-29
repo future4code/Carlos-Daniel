@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev ./src/index.ts",
-    "start": "tsc && node ./build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node index.ts",
+    "ts-start": "ts-node ./src/index.ts",
+    "start-dev": "npx ts-node-dev ./src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "expres": "^0.0.5",
+    "express": "^4.17.1",
     "knex": "^0.95.14",
     "mysql": "^2.18.1"
   }

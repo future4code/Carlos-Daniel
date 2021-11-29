@@ -1,24 +1,46 @@
-import express, { Express } from "express";
+import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
-import knex from "knex";
+import connection from "./connection";
 
 const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
 
-//Conexão com o banco de dados
-export const connection = knex({
-  client: "mysql",
-  connection: {
-    host: process.env.DB_HOST,
-    port: 3306,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-  },
+// 1 - Criar Usuário
+app.post("/user", async (req, res) => {
+  try {
+    await connection.raw(`
+    INSERT INTO User
+    (id,nickname, name, email)
+    VALUES(
+      ${Date.now().toString()},
+      "${req.body.nickname}",
+      "${req.body.name}",
+      "${req.body.email}",
+    )
+    `);
+    res.status(201).send("Usuário criado com sucesso!");
+  } catch (error) {
+    res.status(500).send("Ocorreu algo errado! Por favor, tente novamente.");
+  }
 });
+
+// 2 - Buscar usuário por id
+app.get("/user/:id", async (req, res) => {
+  try {
+    const resultado = await connection.raw(`
+    SELECT * FROM User
+    `);
+    res.status(200).send(resultado);
+  } catch (error) {
+    res.status(500).send("Ocorreu algo errado! Por favor, tente novamente.");
+  }
+});
+
+// 3 -Editar Usuários
+app.post("user/:id", async (req, res) => {});
 
 //Criação do Servidor
 const server = app.listen(process.env.PORT || 3003, () => {
