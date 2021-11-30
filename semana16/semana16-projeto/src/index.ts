@@ -19,7 +19,36 @@ app.post("/user", async (req: Request, res: Response) => {
     });
     res.send("Usuário criado com suceso");
   } catch (error) {
+    res.status(500).send("Ocorreu um erro inesperado, tente novamente!");
+  }
+});
+
+// 2 - Pegar usuário por ID
+app.get("/user/:id", async (req: Request, res: Response) => {
+  try {
+    const resultado = await connection("User")
+      .select()
+      .where({ id: req.params.id });
+    res.send(resultado);
+  } catch (error) {
     res.status(500).send({ message: (error as Error).message });
+  }
+});
+
+// 3 - Editar usuário
+app.put("/user/:id", async (req: Request, res: Response) => {
+  try {
+    connection("User")
+      .update({
+        id: req.body.id,
+        nickname: req.body.nickname,
+        name: req.body.name,
+        email: req.body.email,
+      })
+      .where({ id: req.params.id });
+    res.status(200).send("Usuário atualizado!");
+  } catch (error) {
+    res.status(500).send("Ocorreu um erro inesperado, tente novamente!");
   }
 });
 
