@@ -8,16 +8,6 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-// Teste - Pegar todos os usuários
-// app.get("/user", async (req: Request, res: Response) => {
-//   try {
-//     const resultado = await connection("User");
-//     res.send(resultado);
-//   } catch (error) {
-//     res.status(500).send({ message: (error as Error).message });
-//   }
-// });
-
 // 1 - Criar Usuário
 app.post("/user", async (req: Request, res: Response) => {
   try {
