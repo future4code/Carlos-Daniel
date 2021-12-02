@@ -12,14 +12,14 @@ app.use(cors());
 app.post("/user", async (req: Request, res: Response) => {
   try {
     await connection("User").insert({
-      id: req.body.id,
+      id: Date.now().toString(),
       nickname: req.body.nickname,
       name: req.body.name,
       email: req.body.email,
     });
     res.send("Usuário criado com suceso");
   } catch (error) {
-    res.status(500).send("Ocorreu um erro! Por favor, tente novamente");
+    res.status(500).send({ message: error.message });
   }
 });
 
