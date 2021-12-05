@@ -1,0 +1,15 @@
+GET http://localhost:3003/character?page=2
+
+###
+
+PUT http://localhost:3003/character
+Content-Type: application/json
+
+{
+    "name": "juggernaut",
+    "gender": "MALE",
+    "description": "O irmão do professor X!!"
+}
+
+###
+DELETE http://localhost:3003/character/3
