@@ -7,7 +7,13 @@ export default async function getAllProducts(
   res: Response
 ): Promise<void> {
   try {
-    const products: Product[] = await connection("labecommerce_products");
+    const search = req.query.search || "%";
+    const products: Product[] = await connection("labecommerce_products").where(
+      "name",
+      "LIKE",
+      `%${search}%`
+    );
+
     res.send(products);
   } catch (error: any) {
     res.status(400).send({ message: error.message });
