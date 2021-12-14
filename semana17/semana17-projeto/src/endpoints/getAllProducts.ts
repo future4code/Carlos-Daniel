@@ -8,11 +8,11 @@ export default async function getAllProducts(
 ): Promise<void> {
   try {
     const search = req.query.search || "%";
-    const products: Product[] = await connection("labecommerce_products").where(
-      "name",
-      "LIKE",
-      `%${search}%`
-    );
+    const order = req.query.order === "ASC" ? "ASC" : "DESC";
+    const products: Product[] = await connection("labecommerce_products")
+      .select()
+      .orderBy("name", order)
+      .where("name", "LIKE", `%${search}%`);
 
     res.send(products);
   } catch (error: any) {
