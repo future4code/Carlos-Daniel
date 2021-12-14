@@ -6,6 +6,7 @@ import { getUserByEmail } from "./services/getUserByEmail";
 import { generateToken } from "./services/Authenticator";
 import { generateId } from "./services/IdGenerateId";
 import { createUser } from "./data/connection";
+import { User } from "./types";
 
 app.get("/user/profile", async (req: Request, res: Response) => {
   try {
@@ -13,7 +14,7 @@ app.get("/user/profile", async (req: Request, res: Response) => {
 
     const authenticationData = getData(token);
 
-    const user = await getUserById(authenticationData.id);
+    const user: User = await getUserById(authenticationData.id);
 
     res.status(200).send({
       id: user.id,
@@ -68,9 +69,9 @@ app.post("/user/login", async (req: Request, res: Response) => {
       password: req.body.password,
     };
 
-    const user = await getUserByEmail(userData.email);
+    const user: User = await getUserByEmail(userData.email);
 
-    if (req.body.password !== userData.password) {
+    if (user.password !== userData.password) {
       throw new Error("Invalid password");
     }
 
