@@ -11,7 +11,7 @@ export class Authenticator {
     return token;
   };
 
-  getTokenData = (token: string): authenticationData | null => {
+  getTokenData = (token: any | string): authenticationData | null => {
     try {
       const tokenData = verify(
         token,
