@@ -38,11 +38,11 @@ export class UserDataBase extends BaseDatabase {
     }
   }
 
-  public async findUserProfile(id: AuthenticationData): Promise<User[]> {
+  public async findUserProfile(id1: AuthenticationData): Promise<User[]> {
     try {
       const result = await BaseDatabase.connection("cookenu_users")
         .select("id", "name", "email")
-        .where({ id: id.id });
+        .where({ id: id1.id });
       return result.map((user: any) => User.toUserModel(user));
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
