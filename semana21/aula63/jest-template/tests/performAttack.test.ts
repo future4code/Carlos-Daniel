@@ -14,7 +14,7 @@ test("Perform Attack test", () => {
   };
 
   const defender: Character = {
-    name: "",
+    name: "Sasuke",
     life: 1300,
     strength: 400,
     defense: 800,
@@ -34,4 +34,10 @@ test("Perform Attack test", () => {
   expect(validator).toHaveBeenCalled();
   expect(validator).toHaveBeenCalledTimes(2);
   expect(validator).toHaveReturnedTimes(2);
+
+  //Exercício 06
+  expect(attacker.life).toEqual(1500);
+  expect(attacker.life > defender.life).toBe(true);
+  expect(attacker.defense < defender.defense).toBe(true);
+  expect(attacker.name.length === defender.name.length).toBe(true);
 });
