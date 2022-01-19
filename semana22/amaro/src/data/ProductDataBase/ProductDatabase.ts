@@ -18,4 +18,16 @@ export class ProductDatabase extends BaseDatabase {
       throw new Error(error.sqlMessage || error.message);
     }
   }
+
+  async getProductByName(name: string): Promise<Product> {
+    try {
+      const result = await this.connection("amaro_products")
+        .select("*")
+        .where({ name });
+
+      return toProductModel(result[0]);
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
 }

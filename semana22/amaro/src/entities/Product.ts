@@ -17,6 +17,10 @@ export interface GetProductByIdInputDTO {
   id: string;
 }
 
+export interface GetProductByNameDTO {
+  name: string;
+}
+
 export function toProductModel(obj: any): Product {
   return (
     obj && {

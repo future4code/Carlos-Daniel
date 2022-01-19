@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
-import { CreateProductDTO } from "../../entities/Product";
+import {
+  CreateProductDTO,
+  GetProductByNameDTO,
+  Product,
+} from "../../entities/Product";
 import { ProductBusiness } from "../../business/ProductBusiness/ProductBusiness";
 
 export class ProductController {
@@ -21,6 +25,26 @@ export class ProductController {
       res.status(201).send({ message });
     } catch (error: any) {
       const message = error.SqlMessage || error.message;
+
+      res.send({ message });
+    }
+  }
+
+  async getProductByName(req: Request, res: Response): Promise<void> {
+    try {
+      const message = "Success!";
+
+      const input: GetProductByNameDTO = {
+        name: req.params.name,
+      };
+
+      const product: Product | undefined =
+        await new ProductBusiness().getProductByName(input);
+
+      res.status(200).send({ message, product });
+    } catch (error: any) {
+      let message = error.sqlMessage || error.message;
+      res.statusCode = 400;
 
       res.send({ message });
     }

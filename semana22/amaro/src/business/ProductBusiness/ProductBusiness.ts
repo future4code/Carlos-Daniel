@@ -1,4 +1,8 @@
-import { CreateProductDTO, Product } from "../../entities/Product";
+import {
+  CreateProductDTO,
+  GetProductByNameDTO,
+  Product,
+} from "../../entities/Product";
 import {
   AuthenticationData,
   Authenticator,
@@ -35,6 +39,24 @@ export class ProductBusiness {
       };
 
       await new ProductDatabase().registerProduct(product);
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
+  }
+
+  async getProductByName(
+    input: GetProductByNameDTO
+  ): Promise<Product | undefined> {
+    try {
+      const product: Product = await new ProductDatabase().getProductByName(
+        input.name
+      );
+
+      if (!product) {
+        throw new Error("Product not found");
+      }
+
+      return product;
     } catch (error: any) {
       throw new Error(error.message);
     }
